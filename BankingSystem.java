@@ -1,4 +1,6 @@
-class HelloWorld {
+import java.util.Scanner;
+
+class BankingSystem {
   public static void main(String[] args) {
     decide();
   }
@@ -9,5 +11,11 @@ class HelloWorld {
     System.out.println("2> Show records");
     System.out.println("3> Edit records");
     System.out.println("4> Close program");
+
+    Scanner myObj = new Scanner(System.in);
+    int ans = myObj.nextInt();
+    if (ans == 1) {
+      System.out.println("Ok");
+    }
   }
 }
