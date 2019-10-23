@@ -15,7 +15,13 @@ class BankingSystem {
     Scanner myObj = new Scanner(System.in);
     int ans = myObj.nextInt();
     if (ans == 1) {
-      System.out.println("Ok");
+      // Add a record
+    } else if (ans == 2) {
+      // Show records
+    } else if (ans == 3) {
+      // Edit records
+    } else {
+      
     }
   }
 }
