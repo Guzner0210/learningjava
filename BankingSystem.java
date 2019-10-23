@@ -1,6 +1,10 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 class BankingSystem {
+  // Store records
+  static ArrayList<Account> accounts = new ArrayList<Account>();
+
   public static void main(String[] args) {
     decide();
   }
@@ -37,11 +41,20 @@ class BankingSystem {
     double balance = _balance.nextDouble();
 
     Account newAccount = new Account(accountNumber, firstName, lastName, balance);
+    accounts.add(newAccount);
     System.out.println("This is your new account: ");
     System.out.println(newAccount.accountNumber);
     System.out.println(newAccount.firstName);
     System.out.println(newAccount.lastName);
     System.out.println(newAccount.balance);
+    System.out.println("");
+  }
+
+  public static void showRecords() {
+    for (Account i : accounts) {
+      System.out.println(i.accountNumber + "/" + i.firstName + " " + i.lastName + "/" + i.balance);
+      System.out.println("");
+    }
   }
 
   public static void decide() {
@@ -50,17 +63,23 @@ class BankingSystem {
     System.out.println("2> Show records");
     System.out.println("3> Edit records");
     System.out.println("4> Close program");
+    System.out.println("");
 
     Scanner myObj = new Scanner(System.in);
     int ans = myObj.nextInt();
+
+    System.out.println("");
+
     if (ans == 1) {
       addRecord();
     } else if (ans == 2) {
-      // Show records
+      showRecords();
     } else if (ans == 3) {
       // Edit records
     } else {
 
     }
+
+    decide();
   }
 }
